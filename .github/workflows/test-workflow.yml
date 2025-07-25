@@ -5,6 +5,14 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      failAction:
+        required: false
+        type: boolean
+        default: false
+        description: Fail Action
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -14,5 +22,6 @@ jobs:
           echo "Jojo pr TEST"
 
       - name: Fail tests
+        if: ${{ inputs.failAction }}
         run: |
           exit 1
