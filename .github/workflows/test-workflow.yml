@@ -17,7 +17,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Pass tests
+      - name: Pass Niko
         run: |
           echo "Jojo pr TEST"
 
